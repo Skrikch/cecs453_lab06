@@ -30,8 +30,9 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
     } catch (e) {
       setState(() => _isLoading = false);
       // DONE: Handle error (e.g., show a SnackBar or something cool)
-      const errorBar = SnackBar(content: Text('Error! Fetch Failed!'));
-      ScaffoldMessenger.of(context).showSnackBar(errorBar);
+      ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Error! Fetch Failed!')),
+      );
     }
   }
 
@@ -58,6 +59,11 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
                   Text("City: ${_currentWeather!.cityName}"),
                   Text("Temp: ${_currentWeather!.temperature}°C"),
                   Text("Condition: ${_currentWeather!.condition}"),
+                  Image.network(
+                    'https://openweathermap.org/payload/api/media/file/${_currentWeather!.iconCode}.png',
+                    height: 80,
+                    width: 80,
+                  )
                 ],
               ),
           ],

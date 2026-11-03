@@ -18,7 +18,13 @@ class MyWeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Weather App',
-      home: const WeatherHomeScreen(),
+      theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.deepPurple,
+            foregroundColor: Colors.white,
+            elevation: 4,
+          )
+      ),      home: const WeatherHomeScreen(),
     );
   }
 }
