@@ -1,3 +1,4 @@
+// Authors: Christos Georgakopoulos, Britney Ferguson
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:cecs453_lab06/screens/weather_screen.dart';
@@ -8,6 +9,7 @@ void main() async {
   // Reading text from '.env' file
   await dotenv.load(fileName: ".env");
 
+  // Main Entrypoint
   runApp(const MyWeatherApp());
 }
 
@@ -19,12 +21,13 @@ class MyWeatherApp extends StatelessWidget {
     return MaterialApp(
       title: 'Weather App',
       theme: ThemeData(
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.deepPurple,
-            foregroundColor: Colors.white,
-            elevation: 4,
-          )
-      ),      home: const WeatherHomeScreen(),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.deepPurple,
+          foregroundColor: Colors.white,
+          elevation: 4,
+        ),
+      ),
+      home: const WeatherHomeScreen(),
     );
   }
 }

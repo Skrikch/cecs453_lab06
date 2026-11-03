@@ -1,3 +1,4 @@
+// Authors: Christos Georgakopoulos, Britney Ferguson
 class WeatherData {
   // Properties for our data model.
   final String cityName;

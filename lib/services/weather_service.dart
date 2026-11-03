@@ -1,3 +1,4 @@
+// Authors: Christos Georgakopoulos, Britney Ferguson
 // Looks like `jsonDecode` won't work without this library
 import 'dart:convert';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
