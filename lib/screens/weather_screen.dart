@@ -29,7 +29,9 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
       });
     } catch (e) {
       setState(() => _isLoading = false);
-      // TODO: Handle error (e.g., show a SnackBar or something cool)
+      // DONE: Handle error (e.g., show a SnackBar or something cool)
+      const errorBar = SnackBar(content: Text('Error! Fetch Failed!'));
+      ScaffoldMessenger.of(context).showSnackBar(errorBar);
     }
   }
 
@@ -41,6 +43,7 @@ class _WeatherHomeScreenState extends State<WeatherHomeScreen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          // TODO: Organize the button to look neater
           children: [
             TextField(
               controller: _controller,
